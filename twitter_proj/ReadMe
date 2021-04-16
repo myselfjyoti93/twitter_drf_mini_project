@@ -13,14 +13,22 @@
             "age" : "19"
             response : {"data":{"username":"user4","email_id":"user4@gmail.com","age":"19"},"message":"Created Successfully","error":""}
 
+            * This will register any user with their username & email_id (POST Method)
+
         (b) http://127.0.0.1:8000/web/api/v1/twitter/tweet
             "tweeted_by":"user2",
             "tweet_content": "ABCD",
             "tweet_hashtag": "#CHECK"
             response : {"data":{"tweeted_by":"user2","tweet_content":"ABCD","tweet_hashtag":"#CHECK"},"message":"Tweeted Successfully","error":""}
 
+            *  This will be used by the user to tweet (POST Method)
+
         (c) http://127.0.0.1:8000/web/api/v1/twitter/get_tweets_of_user?tweeted_by=user2
             response : {"data":[{"tweet_hashtag":"#CHECK","tweet_content":"ABCD","tweeted_at":"2021-04-16T16:47:33Z"}],"message":"Tweet retrieved Successfully","error":""}
 
+            *  This will show top 10 latest tweets for an user (GET Method)
+
         (d) http://127.0.0.1:8000/web/api/v1/twitter/get_hastags?tweet_hashtag=%23CHECK
             response : {"data":[{"tweet_content":"ABC","tweeted_at":"2021-04-16T16:47:27Z","tweeted_by":"user1"},{"tweet_content":"ABCD","tweeted_at":"2021-04-16T16:47:33Z","tweeted_by":"user2"}],"message":"Tweet with hashtag #CHECK retrieved Successfully","error":""}
+
+            *  This will show top 100 tweets with a particular hastag (GET Method)
