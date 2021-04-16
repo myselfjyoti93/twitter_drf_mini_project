@@ -1,0 +1,61 @@
+test_twitter_00001_create_no_email_id_fail (tweet_api.tests.test_ddt_twitter.TestTwitter)
+test_twitter_00001_create_no_email_id_fail ... ok
+test_twitter_00002_create_blank_username_fail (tweet_api.tests.test_ddt_twitter.TestTwitter)
+test_twitter_00002_create_blank_username_fail ... ok
+test_twitter_00003_create_whitespace_username_fail (tweet_api.tests.test_ddt_twitter.TestTwitter)
+test_twitter_00003_create_whitespace_username_fail ... ok
+test_twitter_00004_create_blank_email_id_fail (tweet_api.tests.test_ddt_twitter.TestTwitter)
+test_twitter_00004_create_blank_email_id_fail ... ok
+test_twitter_00005_create_whitespace_email_id_fail (tweet_api.tests.test_ddt_twitter.TestTwitter)
+test_twitter_00005_create_whitespace_email_id_fail ... ok
+test_twitter_00006_create_invalid_email_id_fail (tweet_api.tests.test_ddt_twitter.TestTwitter)
+test_twitter_00006_create_invalid_email_id_fail ... ok
+test_twitter_00007_create_record_exist_fail (tweet_api.tests.test_ddt_twitter.TestTwitter)
+test_twitter_00007_create_record_exist_fail ... ok
+test_twitter_00008_create_duplicate_email_id_fail (tweet_api.tests.test_ddt_twitter.TestTwitter)
+test_twitter_00008_create_duplicate_email_id_fail ... ok
+test_twitter_00009_create_duplicate_username_id_fail (tweet_api.tests.test_ddt_twitter.TestTwitter)
+test_twitter_00009_create_duplicate_username_id_fail ... ok
+test_twitter_00010_create_no_record_success (tweet_api.tests.test_ddt_twitter.TestTwitter)
+test_twitter_00010_create_no_record_success ... ok
+test_twitter_00011_create_inactive_record_success (tweet_api.tests.test_ddt_twitter.TestTwitter)
+test_twitter_00011_create_inactive_record_success ... ok
+test_twitter_00012_tweet_no_param_fail (tweet_api.tests.test_ddt_twitter.TestTwitter)
+test_twitter_00012_tweet_no_param_fail ... ok
+test_twitter_00013_tweet_blank_tweeted_by_fail (tweet_api.tests.test_ddt_twitter.TestTwitter)
+test_twitter_00013_tweet_blank_tweeted_by_fail ... ok
+test_twitter_00014_tweet_whitespace_tweeted_by_fail (tweet_api.tests.test_ddt_twitter.TestTwitter)
+test_twitter_00014_tweet_whitespace_tweeted_by_fail ... ok
+test_twitter_00015_tweet_no_tweet_content_by_fail (tweet_api.tests.test_ddt_twitter.TestTwitter)
+test_twitter_00015_tweet_no_tweet_content_by_fail ... ok
+test_twitter_00016_tweet_blank_tweet_content_by_fail (tweet_api.tests.test_ddt_twitter.TestTwitter)
+test_twitter_00016_tweet_blank_tweet_content_by_fail ... ok
+test_twitter_00017_tweet_whitespace_tweet_content_by_fail (tweet_api.tests.test_ddt_twitter.TestTwitter)
+test_twitter_00017_tweet_whitespace_tweet_content_by_fail ... ok
+test_twitter_00018_tweet_invalid_tweeted_by_fail (tweet_api.tests.test_ddt_twitter.TestTwitter)
+test_twitter_00018_tweet_invalid_tweeted_by_fail ... ok
+test_twitter_00019_tweet_success (tweet_api.tests.test_ddt_twitter.TestTwitter)
+test_twitter_00019_tweet_success ... ok
+test_twitter_00020_tweet_with_hashtag_success (tweet_api.tests.test_ddt_twitter.TestTwitter)
+test_twitter_00020_tweet_with_hashtag_success ... ok
+test_twitter_00021_get_tweet_no_param_fail (tweet_api.tests.test_ddt_twitter.TestTwitter)
+test_twitter_00021_get_tweet_no_param_fail ... ok
+test_twitter_00022_get_tweet_blank_tweeted_by_fail (tweet_api.tests.test_ddt_twitter.TestTwitter)
+test_twitter_00022_get_tweet_blank_tweeted_by_fail ... ok
+test_twitter_00023_get_tweet_whitespace_tweeted_by_fail (tweet_api.tests.test_ddt_twitter.TestTwitter)
+test_twitter_00023_get_tweet_whitespace_tweeted_by_fail ... ok
+test_twitter_00024_get_tweet_invalid_tweeted_by_fail (tweet_api.tests.test_ddt_twitter.TestTwitter)
+test_twitter_00024_get_tweet_invalid_tweeted_by_fail ... ok
+test_twitter_00025_get_tweet_hastag_no_param_fail (tweet_api.tests.test_ddt_twitter.TestTwitter)
+test_twitter_00025_get_tweet_hastag_no_param_fail ... ok
+test_twitter_00026_get_blank_tweet_hastag_fail (tweet_api.tests.test_ddt_twitter.TestTwitter)
+test_twitter_00026_get_blank_tweet_hastag_fail ... ok
+test_twitter_00027_get_whitespace_tweet_hastag_fail (tweet_api.tests.test_ddt_twitter.TestTwitter)
+test_twitter_00027_get_whitespace_tweet_hastag_fail ... ok
+test_twitter_00028_get_invalid_tweet_hastag_fail (tweet_api.tests.test_ddt_twitter.TestTwitter)
+test_twitter_00028_get_invalid_tweet_hastag_fail ... ok
+
+----------------------------------------------------------------------
+Ran 28 tests in 113.699s
+
+OK
