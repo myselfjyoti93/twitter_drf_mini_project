@@ -1,0 +1,516 @@
+{
+    "create_no_email_id_fail": {
+        "url" : "/web/api/v1/twitter/register",
+        "method" : "POST",
+        "input": {
+        },
+        "expected_output": {
+          "status_code" : 400,
+          "data" : {
+            "message": "",
+            "error": "username not in param",
+            "data": {
+            }
+          }
+        }
+    },
+    "create_blank_username_fail": {
+        "url" : "/web/api/v1/twitter/register",
+        "method" : "POST",
+        "input": {
+          "username": ""
+        },
+        "expected_output": {
+          "status_code" : 400,
+          "data" : {
+            "message": "",
+            "error": "Invalid value for username",
+            "data": {
+              "username": ""
+            }
+          }
+        }
+    },
+    "create_whitespace_username_fail": {
+        "url" : "/web/api/v1/twitter/register",
+        "method" : "POST",
+        "input": {
+          "username": " "
+        },
+        "expected_output": {
+          "status_code" : 400,
+          "data" : {
+            "message": "",
+            "error": "Invalid value for username",
+            "data": {
+              "username": " "
+            }
+          }
+        }
+    },
+    "create_no_email_id_fail": {
+        "url" : "/web/api/v1/twitter/register",
+        "method" : "POST",
+        "input": {
+          "username": "user1"
+        },
+        "expected_output": {
+          "status_code" : 400,
+          "data" : {
+            "message": "",
+            "error": "email_id not in param",
+            "data": {
+              "username": "user1"
+            }
+          }
+        }
+    },
+    "create_blank_email_id_fail": {
+        "url" : "/web/api/v1/twitter/register",
+        "method" : "POST",
+        "input": {
+          "username": "user1",
+          "email_id" : ""
+        },
+        "expected_output": {
+          "status_code" : 400,
+          "data" : {
+            "message": "",
+            "error": "Invalid value for email_id",
+            "data": {
+              "username": "user1",
+              "email_id" : ""
+            }
+          }
+        }
+    },
+    "create_whitespace_email_id_fail": {
+        "url" : "/web/api/v1/twitter/register",
+        "method" : "POST",
+        "input": {
+          "username": "user1",
+          "email_id" : " "
+        },
+        "expected_output": {
+          "status_code" : 400,
+          "data" : {
+            "message": "",
+            "error": "Invalid value for email_id",
+            "data": {
+              "username": "user1",
+              "email_id" : " "
+            }
+          }
+        }
+    },
+    "create_invalid_email_id_fail": {
+        "url" : "/web/api/v1/twitter/register",
+        "method" : "POST",
+        "input": {
+          "username": "user1",
+          "email_id" : "abc"
+        },
+        "expected_output": {
+          "status_code" : 400,
+          "data" : {
+            "message": "",
+            "error": "Invalid value for email_id",
+            "data": {
+              "username": "user1",
+              "email_id" : "abc"
+            }
+          }
+        }
+    },
+    "create_record_exist_fail": {
+        "url" : "/web/api/v1/twitter/register",
+        "method" : "POST",
+        "input": {
+          "username": "user3",
+          "email_id" : "user3@gmail.com"
+        },
+        "expected_output": {
+          "status_code" : 409,
+          "data" : {
+            "message": "",
+            "error": "Create error, Record already exist",
+            "data": {
+              "username": "user3",
+              "email_id" : "user3@gmail.com"
+            }
+          }
+        }
+    },
+    "create_duplicate_email_id_fail": {
+        "url" : "/web/api/v1/twitter/register",
+        "method" : "POST",
+        "input": {
+          "username": "user5",
+          "email_id" : "user4@gmail.com"
+        },
+        "expected_output": {
+          "status_code" : 400,
+          "data" : {
+            "message": "",
+            "error": "email_id user4@gmail.com is already in use",
+            "data": {
+              "username": "user5",
+              "email_id" : "user4@gmail.com"
+            }
+          }
+        }
+    },
+      "create_duplicate_username_id_fail": {
+        "url" : "/web/api/v1/twitter/register",
+        "method" : "POST",
+        "input": {
+          "username": "user4",
+          "email_id" : "user5@gmail.com"
+        },
+        "expected_output": {
+          "status_code" : 400,
+          "data" : {
+            "message": "",
+            "error": "username user4 is already in use",
+            "data": {
+              "username": "user4",
+              "email_id" : "user5@gmail.com"
+            }
+          }
+        }
+    },
+    "create_no_record_success": {
+        "url" : "/web/api/v1/twitter/register",
+        "method" : "POST",
+        "input": {
+          "username": "user1",
+          "email_id" : "user@gmail.com"
+        },
+        "expected_output": {
+          "status_code" : 201,
+          "data" : {
+            "message": "Created Successfully",
+            "error": "",
+            "data": {
+              "username": "user1",
+              "email_id" : "user@gmail.com"
+            }
+          }
+        }
+    },
+    "create_inactive_record_success": {
+        "url" : "/web/api/v1/twitter/register",
+        "method" : "POST",
+        "input": {
+          "username": "user2",
+          "email_id" : "user2@gmail.com"
+        },
+        "expected_output": {
+          "status_code" : 201,
+          "data" : {
+            "message": "Created Successfully",
+            "error": "",
+            "data": {
+              "username": "user2",
+              "email_id" : "user2@gmail.com"
+            }
+          }
+        }
+    },
+    "tweet_no_param_fail": {
+        "url" : "/web/api/v1/twitter/tweet",
+        "method" : "POST",
+        "input": {
+        },
+        "expected_output": {
+          "status_code" : 400,
+          "data" : {
+            "message": "",
+            "error": "tweeted_by not in param",
+            "data": {
+            }
+          }
+        }
+    },
+    "tweet_blank_tweeted_by_fail": {
+        "url" : "/web/api/v1/twitter/tweet",
+        "method" : "POST",
+        "input": {
+          "tweeted_by":""
+        },
+        "expected_output": {
+          "status_code" : 400,
+          "data" : {
+            "message": "",
+            "error": "Invalid value for tweeted_by",
+            "data": {
+              "tweeted_by":""
+            }
+          }
+        }
+    },
+    "tweet_whitespace_tweeted_by_fail": {
+        "url" : "/web/api/v1/twitter/tweet",
+        "method" : "POST",
+        "input": {
+          "tweeted_by":" "
+        },
+        "expected_output": {
+          "status_code" : 400,
+          "data" : {
+            "message": "",
+            "error": "Invalid value for tweeted_by",
+            "data": {
+              "tweeted_by":" "
+            }
+          }
+        }
+    },
+    "tweet_no_tweet_content_by_fail": {
+        "url" : "/web/api/v1/twitter/tweet",
+        "method" : "POST",
+        "input": {
+          "tweeted_by":"user1"
+        },
+        "expected_output": {
+          "status_code" : 400,
+          "data" : {
+            "message": "",
+            "error": "tweet_content not in param",
+            "data": {
+              "tweeted_by":"user1"
+            }
+          }
+        }
+    },
+    "tweet_blank_tweet_content_by_fail": {
+        "url" : "/web/api/v1/twitter/tweet",
+        "method" : "POST",
+        "input": {
+          "tweeted_by":"user1",
+          "tweet_content": ""
+        },
+        "expected_output": {
+          "status_code" : 400,
+          "data" : {
+            "message": "",
+            "error": "Invalid value for tweet_content",
+            "data": {
+              "tweeted_by":"user1",
+              "tweet_content": ""
+            }
+          }
+        }
+    },
+    "tweet_whitespace_tweet_content_by_fail": {
+        "url" : "/web/api/v1/twitter/tweet",
+        "method" : "POST",
+        "input": {
+          "tweeted_by":"user1",
+          "tweet_content": " "
+        },
+        "expected_output": {
+          "status_code" : 400,
+          "data" : {
+            "message": "",
+            "error": "Invalid value for tweet_content",
+            "data": {
+              "tweeted_by":"user1",
+              "tweet_content": " "
+            }
+          }
+        }
+    },
+    "tweet_invalid_tweeted_by_fail": {
+        "url" : "/web/api/v1/twitter/tweet",
+        "method" : "POST",
+        "input": {
+          "tweeted_by":"user1",
+          "tweet_content": "xyz"
+        },
+        "expected_output": {
+          "status_code" : 400,
+          "data" : {
+            "message": "",
+            "error": "user1 not a valid user",
+            "data": {
+              "tweeted_by":"user1",
+              "tweet_content": "xyz"
+            }
+          }
+        }
+    },
+    "tweet_success": {
+        "url" : "/web/api/v1/twitter/tweet",
+        "method" : "POST",
+        "input": {
+          "tweeted_by":"user4",
+          "tweet_content": "xyz"
+        },
+        "expected_output": {
+          "status_code" : 201,
+          "data" : {
+            "message": "Tweeted Successfully",
+            "error": "",
+            "data": {
+              "tweeted_by":"user4",
+              "tweet_content": "xyz"
+            }
+          }
+        }
+    },
+    "tweet_with_hashtag_success": {
+        "url" : "/web/api/v1/twitter/tweet",
+        "method" : "POST",
+        "input": {
+          "tweeted_by":"user4",
+          "tweet_content": "xyz",
+          "tweet_hashtag": "#xyz"
+        },
+        "expected_output": {
+          "status_code" : 201,
+          "data" : {
+            "message": "Tweeted Successfully",
+            "error": "",
+            "data": {
+              "tweeted_by":"user4",
+              "tweet_content": "xyz",
+              "tweet_hashtag": "#xyz"
+            }
+          }
+        }
+    },
+    "get_tweet_no_param_fail": {
+        "url" : "/web/api/v1/twitter/get_tweets_of_user",
+        "method" : "GET",
+        "input": {
+        },
+        "expected_output": {
+          "status_code" : 400,
+          "data" : {
+            "message": "",
+            "error": "tweeted_by not in param",
+            "data": {
+            }
+          }
+        }
+    },
+    "get_tweet_blank_tweeted_by_fail": {
+        "url" : "/web/api/v1/twitter/get_tweets_of_user",
+        "method" : "GET",
+        "input": {
+          "tweeted_by": ""
+        },
+        "expected_output": {
+          "status_code" : 400,
+          "data" : {
+            "message": "",
+            "error": "Invalid value for tweeted_by",
+            "data": {
+              "tweeted_by": ""
+            }
+          }
+        }
+    },
+    "get_tweet_whitespace_tweeted_by_fail": {
+        "url" : "/web/api/v1/twitter/get_tweets_of_user",
+        "method" : "GET",
+        "input": {
+          "tweeted_by": " "
+        },
+        "expected_output": {
+          "status_code" : 400,
+          "data" : {
+            "message": "",
+            "error": "Invalid value for tweeted_by",
+            "data": {
+              "tweeted_by": " "
+            }
+          }
+        }
+    },
+    "get_tweet_invalid_tweeted_by_fail": {
+        "url" : "/web/api/v1/twitter/get_tweets_of_user",
+        "method" : "GET",
+        "input": {
+          "tweeted_by": "user1"
+        },
+        "expected_output": {
+          "status_code" : 400,
+          "data" : {
+            "message": "",
+            "error": "user1 not a valid user",
+            "data": {
+              "tweeted_by": "user1"
+            }
+          }
+        }
+    },
+    "get_tweet_hastag_no_param_fail": {
+        "url" : "/web/api/v1/twitter/get_hastags",
+        "method" : "GET",
+        "input": {
+        },
+        "expected_output": {
+          "status_code" : 400,
+          "data" : {
+            "message": "",
+            "error": "tweet_hashtag not in param",
+            "data": {
+            }
+          }
+        }
+    },
+    "get_blank_tweet_hastag_fail": {
+        "url" : "/web/api/v1/twitter/get_hastags",
+        "method" : "GET",
+        "input": {
+          "tweet_hashtag": ""
+        },
+        "expected_output": {
+          "status_code" : 400,
+          "data" : {
+            "message": "",
+            "error": "Invalid value for tweet_hashtag",
+            "data": {
+              "tweet_hashtag": ""
+            }
+          }
+        }
+    },
+    "get_whitespace_tweet_hastag_fail": {
+        "url" : "/web/api/v1/twitter/get_hastags",
+        "method" : "GET",
+        "input": {
+          "tweet_hashtag": " "
+        },
+        "expected_output": {
+          "status_code" : 400,
+          "data" : {
+            "message": "",
+            "error": "Invalid value for tweet_hashtag",
+            "data": {
+              "tweet_hashtag": " "
+            }
+          }
+        }
+    },
+    "get_invalid_tweet_hastag_fail": {
+        "url" : "/web/api/v1/twitter/get_hastags",
+        "method" : "GET",
+        "input": {
+          "tweet_hashtag": "ABC"
+        },
+        "expected_output": {
+          "status_code" : 400,
+          "data" : {
+            "message": "",
+            "error": "Invalid value for tweet_hashtag",
+            "data": {
+              "tweet_hashtag": "ABC"
+            }
+          }
+        }
+    }
+}
+

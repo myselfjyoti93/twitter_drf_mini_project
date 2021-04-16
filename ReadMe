@@ -1,0 +1,26 @@
+1. To run the below project:
+
+    (i) To run the project install python 3.7+
+    (ii) Activate the python env shared in the project : ..\tweet_env\Scripts\activate.bat
+    (iii) Go inside project folder : cd ..\twitter
+    (iv) Install the modules in requirements.txt : python -m pip install -r ..\twitter\requirements.txt
+    (v) Migrate all the models to local db server : python manage.py makemigrations -> python manage.py migrate
+    (vi) Run the project on local server with command : python manage.py runserver
+    (vii) Below are all the exposed apis and their appropriate params :
+        (a) http://127.0.0.1:8000/web/api/v1/twitter/register to register the user. sample params :
+            "username": "user4",
+            "email_id" : "user4@gmail.com"
+            "age" : "19"
+            response : {"data":{"username":"user4","email_id":"user4@gmail.com","age":"19"},"message":"Created Successfully","error":""}
+
+        (b) http://127.0.0.1:8000/web/api/v1/twitter/tweet
+            "tweeted_by":"user2",
+            "tweet_content": "ABCD",
+            "tweet_hashtag": "#CHECK"
+            response : {"data":{"tweeted_by":"user2","tweet_content":"ABCD","tweet_hashtag":"#CHECK"},"message":"Tweeted Successfully","error":""}
+
+        (c) http://127.0.0.1:8000/web/api/v1/twitter/get_tweets_of_user?tweeted_by=user2
+            response : {"data":[{"tweet_hashtag":"#CHECK","tweet_content":"ABCD","tweeted_at":"2021-04-16T16:47:33Z"}],"message":"Tweet retrieved Successfully","error":""}
+
+        (d) http://127.0.0.1:8000/web/api/v1/twitter/get_hastags?tweet_hashtag=%23CHECK
+            response : {"data":[{"tweet_content":"ABC","tweeted_at":"2021-04-16T16:47:27Z","tweeted_by":"user1"},{"tweet_content":"ABCD","tweeted_at":"2021-04-16T16:47:33Z","tweeted_by":"user2"}],"message":"Tweet with hashtag #CHECK retrieved Successfully","error":""}
