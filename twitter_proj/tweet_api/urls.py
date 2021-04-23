@@ -7,4 +7,6 @@ urlpatterns = [
     path('twitter/tweet', MakeTweetApi.as_view(), name='Tweet'),
     path('twitter/get_tweets_of_user', GetTweetApi.as_view(), name='Get Tweets of user'),
     path('twitter/get_hastags', GetHashtagApi.as_view(), name='Get hastag'),
+    # path('twitter/xyzzz', RandomApi.as_view())
+
 ]

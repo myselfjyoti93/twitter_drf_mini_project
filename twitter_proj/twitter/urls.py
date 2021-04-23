@@ -16,8 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from tweet_api import urls as twitter_urls
+from tweet_webhook import urls as twitter_webhook_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('web/api/v1/', include(twitter_urls)),
+path('web/api/v1/', include(twitter_webhook_urls)),
 ]

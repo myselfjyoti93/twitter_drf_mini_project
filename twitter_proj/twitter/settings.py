@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'tweet_api',
+    'tweet_webhook',
 ]
 
 MIDDLEWARE = [
@@ -136,3 +137,6 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.AllowAny',
     ]
 }
+
+WEBHOOK_URL_FOR_TOP_TEN_TWEETS_BY_USER = 'http://127.0.0.1:8000/web/api/v1/twitter/top_ten_tweets'
+WEBHOOK_URL_FOR_TRENDING_TWEETS_WITH_HASHTAG = 'http://127.0.0.1:8000/web/api/v1/twitter/trending_hashtags'
